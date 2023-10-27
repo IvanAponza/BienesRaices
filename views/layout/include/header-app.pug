@@ -1,0 +1,28 @@
+header.bg-green-600.py-2 
+    .container.mx-auto.flex.justify-between.items-center
+        a(href="/")
+            h1.text-2xl.text-white.font-bold.text-center Bienes 
+                span.font-normal Raices
+        
+        nav(class="my-4 text-sm md:flex md:items-center md:gap-3 font-bold text-white hidden")
+            a(href="/auth/registro" class="rounded-md px-2 py-2 border border-white hover:bg-white hover:text-gray-600") Crear Cuenta   
+            a(href="/auth/login" class="rounded-md px-2 py-2 border border-white hover:bg-white hover:text-gray-600") Iniciar Sección 
+
+div(class="bg-green-700 py-5 hidden lg:block")
+    div(class="container mx-auto flex justify-between")
+        nav(class="flex gap-4 items-center")
+            a(href="/categorias/1" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Casa
+            a(href="/categorias/2" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Apartamento  
+            a(href="/categorias/3" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Casa Campo
+            a(href="/categorias/4" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Cabaña
+            a(href="/categorias/5" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Bodega  
+            a(href="/categorias/6" class="text-sm font-bold uppercase text-white rounded-md px-2 py-2 hover:bg-white hover:text-gray-600") Terreno  
+        
+        form(action="/buscador" method="POST" class="flex gap-3 items-center")
+            input(type="hidden" name="_csrf" value= csrfToken)
+            
+            label(for="termino" class="text-sm uppercase font-bold text-white") Búsqueda 
+
+            input(type="text" id="termino" name="termino" placeholder="Buscar Propiedades" class="p-2 rounded-lg shadow text-sm") 
+
+            input(type="submit" class="bg-green-800 hover:bg-white hover:text-gray-600 rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm" value="Buscar")
